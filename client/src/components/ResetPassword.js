@@ -18,7 +18,7 @@ function ResetPassword() {
     try {
       const response = await axios({
         method: "post",
-        url: URL + "/api/auth/resetpassword/" + resetPasswordToken,
+        url: URL + "https://full-stack-authintication-system.vercel.app/resetpassword/" + resetPasswordToken,
         data: password
       });
 
