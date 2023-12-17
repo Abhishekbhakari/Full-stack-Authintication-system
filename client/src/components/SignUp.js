@@ -19,7 +19,7 @@ function SignUp() {
     try {
       const response = await axios({
         method: "post",
-        url: URL + "/api/auth/signup",
+        url: URL + "https://full-stack-authintication-system.vercel.app/signup",
         withCredentials: true,
         data: userData
       });
