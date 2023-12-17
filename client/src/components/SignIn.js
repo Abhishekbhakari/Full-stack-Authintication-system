@@ -15,7 +15,7 @@ function SignIn() {
     try {
       const response = await axios({
         method: "post",
-        url: URL + "/api/auth/signin",
+        url: URL + "https://full-stack-authintication-system.vercel.app/signin",
         withCredentials: true,
         data: credentials
       });
