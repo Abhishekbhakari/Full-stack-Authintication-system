@@ -15,7 +15,7 @@ app.use(cookieParser()); // Third-party middleware
 app.use(cors({ origin: [process.env.CLIENT_URL], credentials: true })); //Third-party middleware
 
 // Auth router
-app.use('/api/auth', authRouter);
+app.use('https://full-stack-authintication-system.vercel.app/', authRouter);
 
 app.use('/', (req, res) => {
   res.status(200).json({ data: 'JWTauth server ;)' });
