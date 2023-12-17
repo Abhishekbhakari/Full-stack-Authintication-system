@@ -16,7 +16,7 @@ function ForgotPassword() {
     try {
       const response = await axios({
         method: 'post',
-        url: URL + '/api/auth/forgotpassword',
+        url: URL + 'https://full-stack-authintication-system.vercel.app/forgotpassword',
         data: { email },
       });
 
