@@ -26,7 +26,7 @@ function SignUp() {
 
       // the withCredentials property to 'true'. This tells the browser to include any cookies associated with the current domain in the request.
       if (response.data.success) {
-        navigate("/signin");
+        navigate("https://full-stack-authintication-system.vercel.app/signin");
       }
       setLoading(false);
     } catch (error) {
