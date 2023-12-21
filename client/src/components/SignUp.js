@@ -4,29 +4,20 @@ import axios from "axios";
 function SignUp() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [userData, setUserData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: ""
+   const [userData, setUserData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
   });
   const URL = process.env.REACT_APP_URL;
-
   async function handleSignUp(e) {
-    e.preventDefault(); // event.preventDefault() method to prevent the default behavior of an HTML form submission
-
+    e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios({
-        method: "post",
-        url: URL + "https://full-stack-authintication-system.vercel.app/signup",
-        withCredentials: true,
-        data: userData
-      });
-
-      // the withCredentials property to 'true'. This tells the browser to include any cookies associated with the current domain in the request.
+      const response = await axios.post(`${URL}/signup`, userData, { withCredentials: true });
       if (response.data.success) {
-        navigate("https://full-stack-authintication-system.vercel.app/signin");
+        window.location.href = 'https://full-stack-authintication-system.vercel.app/signin';
       }
       setLoading(false);
     } catch (error) {
@@ -34,7 +25,6 @@ function SignUp() {
       setLoading(false);
     }
   }
-
   return (
     <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 m-4">
       <form className="space-y-6" onSubmit={(e) => handleSignUp(e)}>
